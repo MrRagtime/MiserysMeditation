@@ -120,26 +120,29 @@ jobs:
 
           if [ "${{ runner.os }}" == "macOS" ]; then
             cp -a ./data-overlay/. ./release/data/
+            cp LICENSE ./release
             CARGO_INCREMENTAL=1 cargo bundle --release --target ${{ matrix.target }}
             cp -a ./target/${{ matrix.target }}/release/bundle/osx/miserysmeditation.app release/miserysmeditation.app
             codesign -s - -f ./release/miserysmeditation.app/Contents/MacOS/miserysmeditation
             cd release
-            zip -9r "miserysmeditation_mac-${{ matrix.arch_name }}.zip" miserysmeditation.app data
-            rm -rf miserysmeditation.app data
+            zip -9r "miserysmeditation_mac-${{ matrix.arch_name }}.zip" miserysmeditation.app data LICENSE
+            rm -rf miserysmeditation.app data LICENSE
             cd ..
           elif [ "${{ runner.os }}" == "Windows" ]; then
             CARGO_INCREMENTAL=1 cargo build --release --locked --bin miserysmeditation --target ${{ matrix.target }}
             cp ./target/${{ matrix.target }}/release/miserysmeditation.exe release/miserysmeditation.${{ matrix.arch_name }}.exe
             cp -a ./data-overlay/. ./release/data/
+            cp LICENSE ./release
             powershell -NoLogo -NoProfile -Command "Compress-Archive -Path './release/*' -DestinationPath './release/miserysmeditation_windows-${{ matrix.arch_name }}.zip' -Force"
-            rm -rf ./release/data ./release/miserysmeditation.${{ matrix.arch_name }}.exe
+            rm -rf ./release/data ./release/miserysmeditation.${{ matrix.arch_name }}.exe ./release/LICENSE
           elif [ "${{ runner.os }}" == "Linux" ]; then
             RUSTFLAGS="-C link-args=-s" CARGO_INCREMENTAL=1 cargo build --release --locked --bin miserysmeditation --target ${{ matrix.target }}
             cp -a ./target/${{ matrix.target }}/release/miserysmeditation release/miserysmeditation.${{ matrix.arch_name }}.elf
             cp -a ./data-overlay/. ./release/data/
+            cp LICENSE ./release
             cd release
-            zip -9r "miserysmeditation_linux-${{ matrix.arch_name }}.zip" miserysmeditation.${{ matrix.arch_name }}.elf data
-            rm -f miserysmeditation.${{ matrix.arch_name }}.elf
+            zip -9r "miserysmeditation_linux-${{ matrix.arch_name }}.zip" miserysmeditation.${{ matrix.arch_name }}.elf data LICENSE
+            rm -f miserysmeditation.${{ matrix.arch_name }}.elf LICENSE
             rm -rf data
             cd ..
           fi
@@ -147,7 +150,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
-          name: miserysmeditation_${{ matrix.target_name }}
+          name: miserysmeditation_${{ matrix.target_name }}.zip
           path: ./release/*
           if-no-files-found: error
 
@@ -233,17 +236,23 @@ jobs:
         run: |
           mkdir release
           mv $APP_OUTPUTS_DIR/app-release-unsigned.apk release/miserysmeditation.apk
+          cp -a ./data-overlay/. ./release/data/
           cp LICENSE ./release
+          cd release
+          zip -9r "miserysmeditation_android.zip" miserysmeditation.apk data LICENSE
+          rm -f miserysmeditation.apk LICENSE
+          rm -rf data
+          cd ..
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
-          name: miserysmeditation_android
+          name: miserysmeditation_android.zip
           path: ./release/*
           if-no-files-found: error
 
       - name: Save cache
-        if: ${{ github.ref_name == 'main' || github.ref_type == 'tag' }}
+        if: ${{ github.ref_name == 'main' }}
         uses: actions/cache/save@v6
         with:
           path: |
@@ -313,17 +322,23 @@ jobs:
 
           mkdir release
           mv drshorizon/target/aarch64-nintendo-switch/release/drshorizon.nro release/miserysmeditation.nro
+          cp -a ./data-overlay/. ./release/data/
           cp LICENSE ./release
+          cd release
+          zip -9r "miserysmeditation_horizon.zip" miserysmeditation.nro data LICENSE
+          rm -f miserysmeditation.nro LICENSE
+          rm -rf data
+          cd ..
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
-          name: miserysmeditation_horizon
+          name: miserysmeditation_horizon.zip
           path: ./release/*
           if-no-files-found: error
 
       - name: Save cache
-        if: ${{ github.ref_name == 'main' || github.ref_type == 'tag' }}
+        if: ${{ github.ref_name == 'main' }}
         uses: actions/cache/save@v6
         with:
           path: |
@@ -335,7 +350,7 @@ jobs:
   update_metadata:
     name: Update metadata
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' || github.ref_type == 'tag' }}
+    if: ${{ github.ref_name == 'main' }}
     needs: [build, build_android, build_horizon]
     permissions:
       contents: write
@@ -378,7 +393,7 @@ jobs:
         if: ${{ needs.build.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_windows-x32
+          name: miserysmeditation_windows-x32.zip
           path: temp-windows-x32
 
       - name: Process Windows x32 build
@@ -391,7 +406,7 @@ jobs:
         if: ${{ needs.build.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_windows-x64
+          name: miserysmeditation_windows-x64.zip
           path: temp-windows-x64
 
       - name: Process Windows x64 build
@@ -404,7 +419,7 @@ jobs:
         if: ${{ needs.build.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_linux-x64
+          name: miserysmeditation_linux-x64.zip
           path: temp-linux-x64
 
       - name: Process Linux x64 build
@@ -417,7 +432,7 @@ jobs:
         if: ${{ needs.build.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_mac-x64
+          name: miserysmeditation_mac-x64.zip
           path: temp-mac-x64
 
       - name: Process macOS x64 build
@@ -430,7 +445,7 @@ jobs:
         if: ${{ needs.build.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_mac-arm64
+          name: miserysmeditation_mac-arm64.zip
           path: temp-mac-arm64
 
       - name: Process macOS ARM64 build
@@ -443,33 +458,35 @@ jobs:
         if: ${{ needs.build_android.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_android
+          name: miserysmeditation_android.zip
           path: temp-android
 
       - name: Process Android build
         if: ${{ needs.build_android.result == 'success' }}
         run: |
           cp ./temp-android/miserysmeditation.apk "./release-binaries/miserysmeditation_android_${{ steps.set_version.outputs.version }}.universal.apk"
+          cp ./temp-android/miserysmeditation_android.zip "./release-binaries/miserysmeditation_android_${{ steps.set_version.outputs.version }}.zip"
 
       # Horizon build
       - name: Download Horizon artifact
         if: ${{ needs.build_horizon.result == 'success' }}
         uses: actions/download-artifact@v8
         with:
-          name: miserysmeditation_horizon
+          name: miserysmeditation_horizon.zip
           path: temp-horizon
 
       - name: Process Horizon build
         if: ${{ needs.build_horizon.result == 'success' }}
         run: |
           cp ./temp-horizon/miserysmeditation.nro "./release-binaries/miserysmeditation_switch_${{ steps.set_version.outputs.version }}.arm64.nro"
+          cp ./temp-horizon/miserysmeditation_horizon.zip "./release-binaries/miserysmeditation_switch_${{ steps.set_version.outputs.version }}.arm64.zip"
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
-        if: ${{ github.ref_type == 'tag' }}
+        if: ${{ github.ref_name == 'main' }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: release-binaries/*
-          tag: ${{ github.ref }}
+          tag: ${{ env.VERSION }}
           overwrite: true
           file_glob: true
