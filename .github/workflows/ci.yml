@@ -260,7 +260,7 @@ jobs:
     name: Horizon build
     runs-on: ubuntu-latest
     env:
-      RUSTSWITCH_IMAGE: "ghcr.io/miserysmeditation/drshorizon-build-env:latest"
+      RUSTSWITCH_IMAGE: "ghcr.io/mrragtime/miserysmeditation-build-env:latest"
     strategy:
       fail-fast: true
       matrix:

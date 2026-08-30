@@ -48,7 +48,7 @@ This will build the port in a Docker container. The cargo cache and project dire
 
 If you have Docker Compose installed, the script will run it using config params from `composer.yaml`. The created container will be removed on exit.
 
-Otherwise the script will build the container image with `docker build` and run it via `docker run`. If you want to use precompiled docker image, specify its name in the `RUSTSWITCH_IMAGE` environment variable (i.e. `ghcr.io/doukutsu-rs/drshorizon-build-env:latest`).
+Otherwise the script will build the container image with `docker build` and run it via `docker run`. If you want to use precompiled docker image, specify its name in the `RUSTSWITCH_IMAGE` environment variable (i.e. `ghcr.io/mrragtime/miserysmeditation-build-env:latest`).
 
 If you want to force build via Docker Compose, specify `--docker-mode`:
 ```
@@ -67,7 +67,7 @@ If you want to force build via Docker Compose, specify `--docker-mode`:
 Since the CI workflow for automatically building the Docker image and uploading it to the registry isn't configured yet, you'll need to do this manually.
 
 ### Versioning
-The Docker image version is independent of the version of doukutsu-rs and the Horizon port.
+The Docker image version is independent of the version of miserysmeditation and the Horizon port.
 
 The **major version number** should be incremented only if the introduced changes make it impossible to compile previous versions with the updated image.
 
@@ -81,8 +81,8 @@ The **patch number** may be incremented when some metadata is changed or when ot
 3. Build the image and link it to the `latest` tag (replace `${VERSION}` with the new version of the image):
    ```
    docker buildx build --provenance=false \
-      -t ghcr.io/doukutsu-rs/drshorizon-build-env:latest \
-      -t ghcr.io/doukutsu-rs/drshorizon-build-env:${VERSION} .
+      -t ghcr.io/mrragtime/miserysmeditation-build-env:latest \
+      -t ghcr.io/mrragtime/miserysmeditation-build-env:${VERSION} .
    ```
 
    The `--provencance=false` argument disables generation of provenance attestation, since this attestation generates useless `unknown/unknown` platform on Github Packages page of the image.
@@ -95,6 +95,6 @@ The **patch number** may be incremented when some metadata is changed or when ot
    ```
 3. Push the image (replace `${VERSION}` with the new version of the image):
    ```
-   docker push ghcr.io/doukutsu-rs/drshorizon-build-env:${VERSION}
-   docker push ghcr.io/doukutsu-rs/drshorizon-build-env:latest
+   docker push ghcr.io/mrragtime/miserysmeditation-build-env:${VERSION}
+   docker push ghcr.io/mrragtime/miserysmeditation-build-env:latest
    ```

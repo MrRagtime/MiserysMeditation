@@ -1,6 +1,6 @@
 [package]
 name = "drshorizon"
-description = "doukutsu-rs targeted for Nintendo Switch"
+description = "miserysmeditation targeted for Nintendo Switch"
 version = "0.1.0"
 edition = "2021"
 
@@ -21,11 +21,11 @@ opt-level = 3
 overflow-checks = false
 incremental = true
 
-[profile.dev.package."doukutsu-rs"]
+[profile.dev.package."miserysmeditation"]
 opt-level = 3
 overflow-checks = false
 codegen-units = 256
 incremental = true
 
 [dependencies]
-doukutsu-rs = { path = "../", default-features = false, features = ["default-base", "backend-horizon"] }
+miserysmeditation = { path = "../", default-features = false, features = ["default-base", "backend-horizon"] }
