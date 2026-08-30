@@ -119,19 +119,29 @@ jobs:
           mkdir release
 
           if [ "${{ runner.os }}" == "macOS" ]; then
+            cp -a ./data-overlay/. ./release/data/
             CARGO_INCREMENTAL=1 cargo bundle --release --target ${{ matrix.target }}
             cp -a ./target/${{ matrix.target }}/release/bundle/osx/miserysmeditation.app release/miserysmeditation.app
             codesign -s - -f ./release/miserysmeditation.app/Contents/MacOS/miserysmeditation
             cd release
-            zip -9r "miserysmeditation_mac-${{ matrix.arch_name }}.zip" miserysmeditation.app
-            rm -rf miserysmeditation.app
+            zip -9r "miserysmeditation_mac-${{ matrix.arch_name }}.zip" miserysmeditation.app data
+            rm -rf miserysmeditation.app data
             cd ..
           elif [ "${{ runner.os }}" == "Windows" ]; then
             CARGO_INCREMENTAL=1 cargo build --release --locked --bin miserysmeditation --target ${{ matrix.target }}
             cp ./target/${{ matrix.target }}/release/miserysmeditation.exe release/miserysmeditation.${{ matrix.arch_name }}.exe
+            cp -a ./data-overlay/. ./release/data/
+            powershell -NoLogo -NoProfile -Command "Compress-Archive -Path './release/*' -DestinationPath './release/miserysmeditation_windows-${{ matrix.arch_name }}.zip' -Force"
+            rm -rf ./release/data ./release/miserysmeditation.${{ matrix.arch_name }}.exe
           elif [ "${{ runner.os }}" == "Linux" ]; then
             RUSTFLAGS="-C link-args=-s" CARGO_INCREMENTAL=1 cargo build --release --locked --bin miserysmeditation --target ${{ matrix.target }}
             cp -a ./target/${{ matrix.target }}/release/miserysmeditation release/miserysmeditation.${{ matrix.arch_name }}.elf
+            cp -a ./data-overlay/. ./release/data/
+            cd release
+            zip -9r "miserysmeditation_linux-${{ matrix.arch_name }}.zip" miserysmeditation.${{ matrix.arch_name }}.elf data
+            rm -f miserysmeditation.${{ matrix.arch_name }}.elf
+            rm -rf data
+            cd ..
           fi
 
       - name: Upload artifact
@@ -374,7 +384,7 @@ jobs:
       - name: Process Windows x32 build
         if: ${{ needs.build.result == 'success' }}
         run: |
-          cp ./temp-windows-x32/miserysmeditation.i686.exe "./release-binaries/miserysmeditation_windows_${{ steps.set_version.outputs.version }}.i686.exe"
+          cp ./temp-windows-x32/miserysmeditation_windows-i686.zip "./release-binaries/miserysmeditation_windows_${{ steps.set_version.outputs.version }}.i686.zip"
 
       # Windows x64 build
       - name: Download Windows x64 artifact
@@ -387,7 +397,7 @@ jobs:
       - name: Process Windows x64 build
         if: ${{ needs.build.result == 'success' }}
         run: |
-          cp ./temp-windows-x64/miserysmeditation.x86_64.exe "./release-binaries/miserysmeditation_windows_${{ steps.set_version.outputs.version }}.x86_64.exe"
+          cp ./temp-windows-x64/miserysmeditation_windows-x86_64.zip "./release-binaries/miserysmeditation_windows_${{ steps.set_version.outputs.version }}.x86_64.zip"
 
       # Linux x64 build
       - name: Download Linux x64 artifact
@@ -400,7 +410,7 @@ jobs:
       - name: Process Linux x64 build
         if: ${{ needs.build.result == 'success' }}
         run: |
-          cp ./temp-linux-x64/miserysmeditation.x86_64.elf "./release-binaries/miserysmeditation_linux_${{ steps.set_version.outputs.version }}.x86_64.elf"
+          cp ./temp-linux-x64/miserysmeditation_linux-x86_64.zip "./release-binaries/miserysmeditation_linux_${{ steps.set_version.outputs.version }}.x86_64.zip"
 
       # macOS x64 build
       - name: Download macOS x64 artifact
