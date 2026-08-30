@@ -75,7 +75,7 @@ impl FilesystemContainer {
         }
 
         #[cfg(not(any(target_os = "android", target_os = "horizon")))]
-        let project_dirs = match directories::ProjectDirs::from("", "", "doukutsu-rs") {
+        let project_dirs = match directories::ProjectDirs::from("", "", "miserysmeditation") {
             Some(dirs) => dirs,
             None => {
                 use crate::framework::error::GameError;
@@ -105,8 +105,8 @@ impl FilesystemContainer {
         }
         #[cfg(target_os = "horizon")]
         {
-            let mut data_path = PathBuf::from("sdmc:/switch/doukutsu-rs/data");
-            let mut user_path = PathBuf::from("sdmc:/switch/doukutsu-rs/user");
+            let mut data_path = PathBuf::from("sdmc:/switch/miserysmeditation/data");
+            let mut user_path = PathBuf::from("sdmc:/switch/miserysmeditation/user");
 
             let _ = std::fs::create_dir_all(&data_path);
             let _ = std::fs::create_dir_all(&user_path);

@@ -43,7 +43,7 @@ impl VanillaExtractor {
         let mut vanilla_exe_path = PathBuf::from(sdl2::filesystem::pref_path(crate::common::ORG_NAME, crate::common::APP_NAME).unwrap());
 
         #[cfg(target_os = "horizon")]
-        let mut vanilla_exe_path = PathBuf::from("sdmc:/switch/doukutsu-rs/");
+        let mut vanilla_exe_path = PathBuf::from("sdmc:/switch/miserysmeditation/");
 
         vanilla_exe_path.push(&exe_name);
 

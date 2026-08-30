@@ -1510,7 +1510,7 @@ impl EngineConstants {
                 "Credit16" => (160, 240),
                 "Credit17" => (160, 240),
                 "Credit18" => (160, 240),
-                "Face" => (288, 240),
+                "MiserysMeditation/Face" => (288, 240),
                 "Face_0" => (288, 240), // nxengine
                 "Face_1" => (288, 240), // nxengine
                 "Face_2" => (288, 240), // nxengine
@@ -1530,19 +1530,19 @@ impl EngineConstants {
                 "headband/plus/Npc/NpcRegu" => (320, 240),
                 "icons" => (64, 64),
                 "ItemImage" => (256, 128),
-                "Loading" => (64, 8),
+                "MiserysMeditation/Loading" => (64, 8),
                 "MyChar" => (200, 64),
                 "mychar_p2" => (200, 384), // switch
                 "Npc/Npc0" => (32, 32),
                 "Npc/NpcAlmo1" => (320, 240),
-                "Npc/NpcAlmo2" => (320, 240),
+                "Npc/MiserysMeditation/NpcAlmo2" => (320, 240),
                 "Npc/NpcBallos" => (320, 240),
                 "Npc/NpcBllg" => (320, 96),
                 "Npc/NpcCemet" => (320, 112),
                 "Npc/NpcCent" => (320, 192),
                 "Npc/NpcCurly" => (256, 80),
                 "Npc/NpcDark" => (160, 64),
-                "Npc/NpcDr" => (320, 240),
+                "Npc/MiserysMeditation/NpcDr" => (320, 240),
                 "Npc/NpcEggs1" => (320, 112),
                 "Npc/NpcEggs2" => (320, 128),
                 "Npc/NpcFrog" => (320, 240),
@@ -1552,9 +1552,9 @@ impl EngineConstants {
                 "Npc/NpcIronH" => (320, 72),
                 "Npc/NpcIsland" => (320, 80),
                 "Npc/NpcKaze" => (320, 240),
-                "Npc/NpcKings" => (96, 48),
+                "Npc/MiserysMeditation/NpcKings" => (96, 48),
                 "Npc/NpcMaze" => (320, 192),
-                "Npc/NpcMiza" => (320, 240),
+                "Npc/MiserysMeditation/NpcMiza" => (320, 240),
                 "Npc/NpcMoon" => (320, 128),
                 "Npc/NpcOmg" => (320, 120),
                 "Npc/NpcPlant" => (320, 48),
@@ -1562,7 +1562,7 @@ impl EngineConstants {
                 "Npc/NpcPriest" => (320, 240),
                 "Npc/NpcRavil" => (320, 168),
                 "Npc/NpcRed" => (320, 144),
-                "Npc/NpcRegu" => (320, 240),
+                "Npc/MiserysMeditation/NpcRegu" => (320, 240),
                 "Npc/NpcSand" => (320, 176),
                 "Npc/NpcStream" => (64, 32),
                 "Npc/NpcSym" => (320, 240),
@@ -1613,12 +1613,12 @@ impl EngineConstants {
                 "Stage/PrtWeed" => (256, 128),
                 "Stage/PrtWhite" => (256, 240),
                 "TextBox" => (244, 144),
-                "Title" => (320, 48),
+                "MiserysMeditation/Title" => (320, 48),
                 "triangles" => (20, 5),
             },
             ignore_ogph_textures: vec![
                 // All in lowercase
-                "title".to_owned(),
+                "miserysmeditation/title".to_owned(),
             ],
             textscript: TextScriptConsts {
                 encoding: TextScriptEncoding::ShiftJIS,
@@ -1825,7 +1825,7 @@ impl EngineConstants {
         self.supports_og_textures = true;
         self.tex_sizes.insert("Caret".to_owned(), (320, 320));
         self.tex_sizes.insert("MyChar".to_owned(), (200, 384));
-        self.tex_sizes.insert("Npc/NpcRegu".to_owned(), (320, 410));
+        self.tex_sizes.insert("Npc/MiserysMeditation/NpcRegu".to_owned(), (320, 410));
         self.tex_sizes.insert("ui".to_owned(), (128, 32));
         self.textscript.reset_invicibility_on_any_script = false;
         self.title.logo_rect = Rect { left: 0, top: 0, right: 216, bottom: 48 };

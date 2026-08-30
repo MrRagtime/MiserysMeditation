@@ -34,8 +34,8 @@ fn main() {
 
         println!("__text_start = {:#x}", (&__text_start) as *const _ as usize);
 
-        let options = doukutsu_rs::game::LaunchOptions::default();
-        let result = doukutsu_rs::game::init(options);
+        let options = miserysmeditation::game::LaunchOptions::default();
+        let result = miserysmeditation::game::init(options);
 
         if let Err(e) = result {
             println!("Initialization error: {}", e);

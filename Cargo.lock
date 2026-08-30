@@ -653,57 +653,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "doukutsu-rs"
-version = "1.0.0"
-dependencies = [
- "bitfield",
- "byteorder",
- "case_insensitive_hashmap",
- "chrono",
- "clap",
- "cpal",
- "deko3d",
- "directories",
- "discord-rich-presence",
- "downcast",
- "encoding_rs",
- "fern",
- "glutin",
- "image",
- "imgui",
- "itertools 0.10.5",
- "jni 0.20.0",
- "lazy_static",
- "lewton",
- "log",
- "ndk 0.7.0",
- "ndk-context",
- "ndk-glue",
- "ndk-sys 0.4.1+23.1.7779620",
- "num-derive 0.3.3",
- "num-traits",
- "objc",
- "open",
- "paste",
- "pelite",
- "rc-box",
- "sdl2",
- "sdl2-sys",
- "serde",
- "serde_cbor",
- "serde_derive",
- "serde_json",
- "strum",
- "strum_macros",
- "vec_mut_scan",
- "webbrowser",
- "winapi",
- "winit",
- "winres",
- "xmltree",
-]
-
-[[package]]
 name = "downcast"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1436,6 +1385,57 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9f1c5b025cda876f66ef43a113f91ebc9f4ccef34843000e0adf6ebbab84e21"
 dependencies = [
  "winapi",
+]
+
+[[package]]
+name = "miserysmeditation"
+version = "1.0.0"
+dependencies = [
+ "bitfield",
+ "byteorder",
+ "case_insensitive_hashmap",
+ "chrono",
+ "clap",
+ "cpal",
+ "deko3d",
+ "directories",
+ "discord-rich-presence",
+ "downcast",
+ "encoding_rs",
+ "fern",
+ "glutin",
+ "image",
+ "imgui",
+ "itertools 0.10.5",
+ "jni 0.20.0",
+ "lazy_static",
+ "lewton",
+ "log",
+ "ndk 0.7.0",
+ "ndk-context",
+ "ndk-glue",
+ "ndk-sys 0.4.1+23.1.7779620",
+ "num-derive 0.3.3",
+ "num-traits",
+ "objc",
+ "open",
+ "paste",
+ "pelite",
+ "rc-box",
+ "sdl2",
+ "sdl2-sys",
+ "serde",
+ "serde_cbor",
+ "serde_derive",
+ "serde_json",
+ "strum",
+ "strum_macros",
+ "vec_mut_scan",
+ "webbrowser",
+ "winapi",
+ "winit",
+ "winres",
+ "xmltree",
 ]
 
 [[package]]

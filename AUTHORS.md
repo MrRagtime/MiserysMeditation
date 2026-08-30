@@ -54,4 +54,4 @@ doukutsu-rs incorporates and builds upon these external works:
 
 ---
 
-_See the full list of all code contributors on [GitHub](https://github.com/doukutsu-rs/doukutsu-rs/graphs/contributors)._
+_See the full list of all code contributors on [GitHub](https://github.com/MrRagtime/miserysmeditation/graphs/contributors)._

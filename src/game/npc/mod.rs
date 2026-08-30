@@ -926,23 +926,23 @@ impl NPCTable {
 
     pub fn get_texture_ref(&self, spritesheet_id: u16) -> TexRef<'_> {
         match spritesheet_id {
-            0 => TexRef::from_str("Title"),
+            0 => TexRef::from_str("MiserysMeditation/Title"),
             2 => TexRef { variant: TexRefVariant::StageTileset(self.stage_textures.deref().borrow()) },
             6 => TexRef::from_str("Fade"),
             8 => TexRef::from_str("ItemImage"),
             11 => TexRef::from_str("Arms"),
             12 => TexRef::from_str("ArmsImage"),
             14 => TexRef::from_str("StageImage"),
-            15 => TexRef::from_str("Loading"),
+            15 => TexRef::from_str("MiserysMeditation/Loading"),
             16 => TexRef::from_str("MyChar"),
             17 => TexRef::from_str("Bullet"),
             19 => TexRef::from_str("Caret"),
             20 => TexRef::from_str("Npc/NpcSym"),
             21 => TexRef { variant: TexRefVariant::StageNPC1(self.stage_textures.deref().borrow()) },
             22 => TexRef { variant: TexRefVariant::StageNPC2(self.stage_textures.deref().borrow()) },
-            23 => TexRef::from_str("Npc/NpcRegu"),
+            23 => TexRef::from_str("Npc/MiserysMeditation/NpcRegu"),
             26 => TexRef::from_str("TextBox"),
-            27 => TexRef::from_str("Face"),
+            27 => TexRef::from_str("MiserysMeditation/Face"),
             _ => TexRef::from_str("Npc/Npc0"),
         }
     }

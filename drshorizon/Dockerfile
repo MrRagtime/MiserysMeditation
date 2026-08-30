@@ -4,7 +4,7 @@ FROM devkitpro/devkita64:20260219
 LABEL maintainer="doukutsu-rs maintainers" \
       org.opencontainers.image.authors="doukutsu-rs maintainers" \
       org.opencontainers.image.description="Build environment for the Horizon port of doukutsu-rs." \
-      org.opencontainers.image.source="https://github.com/doukutsu-rs/doukutsu-rs"
+      org.opencontainers.image.source="https://github.com/MrRagtime/miserysmeditation"
 
 # Setup Rust environment vars
 ENV RUSTUP_HOME=/usr/local/rustup \

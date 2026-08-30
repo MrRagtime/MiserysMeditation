@@ -23,7 +23,7 @@ impl NoDataScene {
 }
 
 #[cfg(target_os = "android")]
-static REL_URL: &str = "https://github.com/doukutsu-rs/doukutsu-rs#data-files";
+static REL_URL: &str = "https://github.com/MrRagtime/miserysmeditation#data-files";
 
 impl Scene for NoDataScene {
     #[allow(unused)]
@@ -54,7 +54,7 @@ impl Scene for NoDataScene {
         graphics::clear(ctx, Color::from_rgb(30, 0, 0));
 
         state.font.builder().center(state.canvas_size.0).y(10.0).color((255, 100, 100, 255)).draw(
-            "doukutsu-rs internal error",
+            "miserysmeditation internal error",
             ctx,
             &state.constants,
             &mut state.texture_set,

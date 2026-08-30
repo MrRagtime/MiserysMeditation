@@ -289,12 +289,12 @@ fn get_logs_dir() -> GameResult<PathBuf> {
 
     #[cfg(target_os = "horizon")]
     {
-        logs_dir = PathBuf::from("sdmc:/switch/doukutsu-rs");
+        logs_dir = PathBuf::from("sdmc:/switch/miserysmeditation");
     }
 
     #[cfg(not(any(target_os = "android", target_os = "horizon")))]
     {
-        let project_dirs = match directories::ProjectDirs::from("", "", "doukutsu-rs") {
+        let project_dirs = match directories::ProjectDirs::from("", "", "miserysmeditation") {
             Some(dirs) => dirs,
             None => {
                 use crate::framework::error::GameError;

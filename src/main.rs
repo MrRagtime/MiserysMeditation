@@ -5,9 +5,9 @@ use std::process::exit;
 use clap::Parser;
 
 fn main() {
-    let options = doukutsu_rs::game::LaunchOptions::parse();
+    let options = miserysmeditation::game::LaunchOptions::parse();
 
-    let result = doukutsu_rs::game::init(options);
+    let result = miserysmeditation::game::init(options);
 
     #[cfg(target_os = "windows")]
     unsafe {
@@ -20,7 +20,7 @@ fn main() {
 
         if let Err(e) = result {
             let title = OsStr::new("Error!").encode_wide().chain(Some(0)).collect::<Vec<u16>>();
-            let message = OsStr::new(format!("Whoops, doukutsu-rs crashed: {}", e).as_str())
+            let message = OsStr::new(format!("Whoops, miserysmeditation crashed: {}", e).as_str())
                 .encode_wide()
                 .chain(Some(0))
                 .collect::<Vec<u16>>();

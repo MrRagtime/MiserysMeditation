@@ -49,7 +49,7 @@ IS_COMPOSE_AVAIL=$(is_bin_avail "docker-compose")
 
 function print_help() {
   echo -e "$(basename $BASH_SOURCE) [-h] [-r] [-V] [<cargo args>...]\n"
-  echo -e "Build script for the doukutsu-rs Horizon port.\n"
+  echo -e "Build script for the miserysmeditation Horizon port.\n"
   echo "Arguments:"
   echo "  --ci              Mark that the script is running in CI environment."
   echo "  --docker          Run build in the Docker container."
@@ -209,11 +209,11 @@ rm -f target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nro
 rm -f target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nacp
 
 message "Creating NACP..."
-nacptool --create 'doukutsu-rs' 'doukutsu-rs contributors' $VERSION target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nacp
+nacptool --create 'miserysmeditation' 'Dr. Ragtime & doukutsu-rs contributors' $VERSION target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nacp
 
 message "Running elf2nro..."
 elf2nro target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.elf target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nro \
-  --icon=../res/crabsue-icon.jpg \
+  --icon=../res/miserysmeditation-icon.jpg \
   --nacp=target/aarch64-nintendo-switch/$BUILD_MODE/drshorizon.nacp
 
 message "done!"

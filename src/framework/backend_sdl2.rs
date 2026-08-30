@@ -175,7 +175,7 @@ impl SDL2EventLoop {
             gl_attr.set_context_version(2, 1);
         }
 
-        let mut win_builder = video.window("Cave Story (doukutsu-rs)", ctx.window.size_hint.0 as _, ctx.window.size_hint.1 as _);
+        let mut win_builder = video.window("Misery's Meditation", ctx.window.size_hint.0 as _, ctx.window.size_hint.1 as _);
         win_builder.position_centered();
         #[cfg(not(target_os = "android"))]
         win_builder.resizable();

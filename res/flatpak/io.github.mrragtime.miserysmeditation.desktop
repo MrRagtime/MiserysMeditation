@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Misery's Meditation
+Comment=A faithful and open-source remake of Cave Story's engine written in Rust
+Exec=miserysmeditation
+Keywords=game;adventure;engine;action;platforms;
+Terminal=false
+Type=Application
+Icon=io.github.mrragtime.miserysmeditation
+Categories=Game;AdventureGame;ActionGame;

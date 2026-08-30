@@ -6,5 +6,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "doukutsu-rs"
+rootProject.name = "miserysmeditation"
 include ':app'

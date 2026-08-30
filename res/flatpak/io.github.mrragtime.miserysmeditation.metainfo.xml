@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mrragtime.miserysmeditation</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Misery's Meditation</name>
+  <summary>A reimplementation of Cave Story's engine with many quality-of-life improvements</summary>
+  <description>
+    <p>doukutsu-rs initially started as a Rust learning project, but eventually evolved into a complete and faithful reimplementation of the engine of Cave Story - a great indie game created by Studio Pixel.</p>
+    <p>It brings many quality-of-life improvements that let you enjoy the 2004 indie classic like a modern game: game logic decoupled from the frame rate with motion interpolation for high refresh rate displays, a flexible non-fixed resolution, switchable 50/60 tps game speeds, multiplayer support, cutscene skipping, and enhanced lighting effects beyond those of the Switch version.</p>
+    <p>A single executable supports game data from multiple versions: the original freeware release, Cave Story+, and the Nintendo Switch port.</p>
+    <p>NOTE: The default data files directory is under <code>$XDG_DATA_HOME/miserysmeditation/data</code>. That being <code>$HOME/.var/app/io.github.mrragtime.miserysmeditation/data/miserysmeditation/data</code> by default.</p>
+  </description>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <url type="homepage">https://doukutsu.rs</url>
+  <url type="bugtracker">https://github.com/MrRagtime/miserysmeditation/issues</url>
+  <url type="vcs-browser">https://github.com/MrRagtime/miserysmeditation</url>
+  <project_license>MIT</project_license>
+  <developer id="io.github.mrragtime">
+    <name>Dr. Ragtime</name>
+  </developer>
+  <developer id="io.github.doukutsu_rs">
+    <name>doukutsu-rs maintainers</name>
+  </developer>
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="language-profanity">mild</content_attribute>
+  </content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/MrRagtime/miserysmeditation/refs/tags/1.0/res/flatpak/screens/grassrown-lightning.png</image>
+      <caption>Enjoy lighting effects that are slightly fancier than those in the Switch version</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MrRagtime/miserysmeditation/refs/tags/1.0/res/flatpak/screens/cutscene-skipping.png</image>
+      <caption>Supports skipping cutscenes, a feature previously exclusive to the Switch version</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MrRagtime/miserysmeditation/refs/tags/1.0/res/flatpak/screens/core-fight.png</image>
+      <caption>Battle with one of the game bosses</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MrRagtime/miserysmeditation/refs/tags/1.0/res/flatpak/screens/snake-trading.png</image>
+      <caption>Another example of lighting effects</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.0" date="2026-08-29">
+      <url type="details">https://github.com/MrRagtime/miserysmeditation/releases/tag/1.0</url>
+      <description>
+        <p>Initial release.</p>
+      </description>
+    </release>
+  </releases>
+  <recommends>
+    <control>keyboard</control>
+  </recommends>
+  <supports>
+    <control>gamepad</control>
+  </supports>
+  <launchable type="desktop-id">io.github.mrragtime.miserysmeditation.desktop</launchable>
+</component>

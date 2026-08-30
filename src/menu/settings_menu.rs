@@ -191,7 +191,7 @@ pub struct SettingsMenu {
 }
 
 static DISCORD_LINK: &str = "https://discord.gg/fbRsNNB";
-static GITHUB_LINK: &str = "https://github.com/doukutsu-rs/doukutsu-rs";
+static GITHUB_LINK: &str = "https://github.com/MrRagtime/miserysmeditation";
 static DOCS_LINK: &str = "https://doukutsu-rs.gitbook.io/docs/";
 static TRIBUTE_LINK: &str = "https://www.cavestory.org/";
 static GENERAL_LINK: &str = "https://discord.gg/cavestory";
@@ -447,7 +447,7 @@ impl SettingsMenu {
         self.links
             .push_entry(LinksMenuEntry::Title, MenuEntry::Disabled(state.loc.t("menus.options_menu.links").to_owned()));
         self.links.push_entry(LinksMenuEntry::Link(DISCORD_LINK), MenuEntry::Active("doukutsu-rs Discord".to_owned()));
-        self.links.push_entry(LinksMenuEntry::Link(GITHUB_LINK), MenuEntry::Active("doukutsu-rs GitHub".to_owned()));
+        self.links.push_entry(LinksMenuEntry::Link(GITHUB_LINK), MenuEntry::Active("miserysmeditation GitHub".to_owned()));
         self.links.push_entry(LinksMenuEntry::Link(DOCS_LINK), MenuEntry::Active("doukutsu-rs Docs".to_owned()));
         self.links
             .push_entry(LinksMenuEntry::Link(TRIBUTE_LINK), MenuEntry::Active("Cave Story Tribute Website".to_owned()));

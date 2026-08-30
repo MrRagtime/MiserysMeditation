@@ -83,7 +83,7 @@ impl GlutinEventLoop {
                 window = window.with_drag_and_drop(false);
             }
 
-            window = window.with_title("doukutsu-rs");
+            window = window.with_title("Misery's Meditation");
             
             #[cfg(not(any(target_os = "windows", target_os = "macos", target_os = "android", target_os = "horizon")))]
             {

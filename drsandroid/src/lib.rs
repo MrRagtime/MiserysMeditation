@@ -55,11 +55,11 @@ fn android_main() {
 }
 
 fn drsandroid_main() {
-    let resource_dir = std::path::PathBuf::from(sdl2::filesystem::pref_path(doukutsu_rs::common::ORG_NAME, doukutsu_rs::common::APP_NAME).unwrap());
+    let resource_dir = std::path::PathBuf::from(sdl2::filesystem::pref_path(miserysmeditation::common::ORG_NAME, miserysmeditation::common::APP_NAME).unwrap());
 
     std::env::set_current_dir(&resource_dir).unwrap();
     
-    let options = doukutsu_rs::game::LaunchOptions::default();
+    let options = miserysmeditation::game::LaunchOptions::default();
 
-    doukutsu_rs::game::init(options).unwrap();
+    miserysmeditation::game::init(options).unwrap();
 }

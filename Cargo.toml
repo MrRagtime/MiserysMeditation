@@ -1,8 +1,8 @@
 [package]
-name = "doukutsu-rs"
+name = "miserysmeditation"
 description = "A re-implementation of Cave Story (Doukutsu Monogatari) engine"
 version = "1.0.0"
-authors = ["doukutsu-rs contributors"]
+authors = ["Dr. Ragtime", "doukutsu-rs contributors"]
 edition = "2021"
 rust-version = "1.65"
 
@@ -10,7 +10,7 @@ rust-version = "1.65"
 crate-type = ["lib"]
 
 [[bin]]
-name = "doukutsu-rs"
+name = "miserysmeditation"
 path = "src/main.rs"
 test = false
 bench = false
@@ -31,12 +31,12 @@ overflow-checks = false
 codegen-units = 256
 
 [package.metadata.bundle]
-name = "doukutsu-rs"
-identifier = "io.github.doukutsu_rs"
+name = "miserysmeditation"
+identifier = "io.github.mrragtime.miserysmeditation"
 icon = ["res/macos/16x16.png", "res/macos/16x16@2x.png", "res/macos/32x32.png", "res/macos/32x32@2x.png", "res/macos/128x128.png", "res/macos/128x128@2x.png", "res/macos/256x256.png", "res/macos/256x256@2x.png", "res/macos/512x512.png", "res/macos/512x512@2x.png"]
 version = "1.0.0"
 resources = ["data"]
-copyright = "Copyright (c) 2020 doukutsu-rs contributors"
+copyright = "Copyright (c) 2026 Dr. Ragtime & doukutsu-rs contributors"
 category = "Game"
 osx_minimum_system_version = "10.15"
 

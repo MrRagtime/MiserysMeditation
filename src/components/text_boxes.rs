@@ -16,7 +16,7 @@ pub struct TextBoxes {
     animated_face: AnimatedFace,
 }
 
-const FACE_TEX: &str = "Face";
+const FACE_TEX: &str = "MiserysMeditation/Face";
 const SWITCH_FACE_TEX: [&str; 5] = ["Face1", "Face2", "Face3", "Face4", "Face5"];
 
 impl TextBoxes {

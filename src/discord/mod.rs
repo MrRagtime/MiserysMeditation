@@ -90,7 +90,7 @@ impl DiscordRPC {
 
         log::debug!("Updating Discord RPC state: {} - {}", state, details);
 
-        let mut activity_assets = Assets::new().large_image("drs");
+        let mut activity_assets = Assets::new().large_image("miserysmeditation");
 
         if self.difficulty.is_some() {
             let difficulty = self.difficulty.unwrap();
@@ -114,7 +114,7 @@ impl DiscordRPC {
             .state(state.as_str())
             .details(details.as_str())
             .assets(activity_assets)
-            .buttons(vec![Button::new("doukutsu-rs on GitHub", "https://github.com/doukutsu-rs/doukutsu-rs")]);
+            .buttons(vec![Button::new("miserysmeditation on GitHub", "https://github.com/MrRagtime/miserysmeditation")]);
 
         match self.client.set_activity(activity) {
             Ok(()) => {

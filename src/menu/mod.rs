@@ -399,19 +399,19 @@ impl<T: std::cmp::PartialEq + std::default::Default + Clone> Menu<T> {
                         character_rect = state.constants.title.cursor_quote;
                     }
                     MenuCharacter::Curly => {
-                        menu_texture = "Npc/NpcRegu";
+                        menu_texture = "Npc/MiserysMeditation/NpcRegu";
                         character_rect = state.constants.title.cursor_curly;
                     }
                     MenuCharacter::Toroko => {
-                        menu_texture = "Npc/NpcRegu";
+                        menu_texture = "Npc/MiserysMeditation/NpcRegu";
                         character_rect = state.constants.title.cursor_toroko;
                     }
                     MenuCharacter::King => {
-                        menu_texture = "Npc/NpcRegu";
+                        menu_texture = "Npc/MiserysMeditation/NpcRegu";
                         character_rect = state.constants.title.cursor_king;
                     }
                     MenuCharacter::Sue => {
-                        menu_texture = "Npc/NpcRegu";
+                        menu_texture = "Npc/MiserysMeditation/NpcRegu";
                         character_rect = state.constants.title.cursor_sue;
                     }
                 }

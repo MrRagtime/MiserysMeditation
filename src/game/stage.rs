@@ -217,8 +217,8 @@ const NXENGINE_TILESETS: [&str; 22] = [
 
 const NXENGINE_NPCS: [&str; 34] = [
     "Guest", "0", "Eggs1", "Ravil", "Weed", "Maze", "Sand", "Omg", "Cemet", "Bllg", "Plant", "Frog", "Curly", "Stream",
-    "IronH", "Toro", "X", "Dark", "Almo1", "Eggs2", "TwinD", "Moon", "Cent", "Heri", "Red", "Miza", "Dr", "Almo2",
-    "Kings", "Hell", "Press", "Priest", "Ballos", "Island",
+    "IronH", "Toro", "X", "Dark", "Almo1", "Eggs2", "TwinD", "Moon", "Cent", "Heri", "Red", "MiserysMeditation/Miza", "MiserysMeditation/Dr", "MiserysMeditation/Almo2",
+    "MiserysMeditation/Kings", "Hell", "Press", "Priest", "Ballos", "Island",
 ];
 
 fn zero_index(s: &[u8]) -> usize {

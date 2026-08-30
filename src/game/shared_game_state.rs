@@ -430,7 +430,7 @@ impl SharedGameState {
         #[cfg(feature = "discord-rpc")]
         let discord_rpc_app_id = match option_env!("DISCORD_RPC_APP_ID") {
             Some(app_id) => app_id,
-            None => "1076523467337367622",
+            None => "1543498306414448680",
         };
 
         Ok(SharedGameState {

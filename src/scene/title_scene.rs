@@ -171,7 +171,7 @@ impl TitleScene {
             song_id = 36;
         } else {
             state.menu_character = MenuCharacter::Quote;
-            song_id = 24;
+            song_id = 30;
         }
 
         if state.settings.soundtrack == "new" && Season::current() == Season::PixelBirthday {
@@ -195,9 +195,8 @@ impl TitleScene {
     }
 }
 
-static COPYRIGHT_PIXEL: &str = "2004.12  Studio Pixel";
 // Freeware
-static COPYRIGHT_NICALIS: &str = "@2022 NICALIS INC."; // Nicalis font uses @ for copyright
+static COPYRIGHT_MISERYSMEDTIATION: &str = "(c)2026 Dr. Ragtime"; // Nicalis font uses @ for copyright
 
 impl Scene for TitleScene {
     fn init(&mut self, state: &mut SharedGameState, ctx: &mut Context) -> GameResult {
@@ -495,7 +494,7 @@ impl Scene for TitleScene {
         self.background.draw(state, ctx, &self.frame, &self.textures, &self.stage)?;
 
         if self.current_menu == CurrentMenu::MainMenu {
-            let batch = state.texture_set.get_or_load_batch(ctx, &state.constants, "Title")?;
+            let batch = state.texture_set.get_or_load_batch(ctx, &state.constants, "MiserysMeditation/Title")?;
 
             batch.add_rect(
                 ((state.canvas_size.0 - state.constants.title.logo_rect.width() as f32) / 2.0).floor(),
@@ -528,11 +527,7 @@ impl Scene for TitleScene {
         if self.current_menu == CurrentMenu::MainMenu {
             self.draw_text_centered(&VERSION_BANNER, state.canvas_size.1 - 15.0, state, ctx)?;
 
-            if state.constants.is_cs_plus {
-                self.draw_text_centered(COPYRIGHT_NICALIS, state.canvas_size.1 - 30.0, state, ctx)?;
-            } else {
-                self.draw_text_centered(COPYRIGHT_PIXEL, state.canvas_size.1 - 30.0, state, ctx)?;
-            }
+            self.draw_text_centered(COPYRIGHT_MISERYSMEDTIATION, state.canvas_size.1 - 30.0, state, ctx)?;
 
             self.compact_jukebox.draw(state, ctx, &self.frame)?;
         }

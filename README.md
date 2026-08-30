@@ -1,4 +1,4 @@
-![doukutsu-rs](./res/sue_crab_banner_github.png)
+![miserysmeditation](./res/sue_crab_banner_github.png)
 
 A reimplementation of the Cave Story (Doukutsu Monogatari) engine with many quality-of-life
 improvements. It lets you enjoy the 2004 indie classic like a modern game, with support for the
@@ -6,38 +6,36 @@ original freeware, Cave Story+, and Nintendo Switch data files.
 
 [Join the Discord server](https://discord.gg/fbRsNNB)
 
-[![CI](https://github.com/doukutsu-rs/doukutsu-rs/actions/workflows/ci.yml/badge.svg?branch=master)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master?preview)
+[![CI](https://github.com/MrRagtime/miserysmeditation/actions/workflows/ci.yml/badge.svg?branch=main)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main?preview)
 
 - Get stable/beta builds from
-  - [get.doukutsu.rs](https://get.doukutsu.rs)
-  - [GitHub Releases](https://github.com/doukutsu-rs/doukutsu-rs/releases)
-  - [Flatpak](https://flathub.org/apps/io.github.doukutsu_rs.doukutsu-rs) (Linux only)
+  - [GitHub Releases](https://github.com/MrRagtime/miserysmeditation/releases)
+  - [Flatpak](https://flathub.org/apps/io.github.mrragtime.miserysmeditation) (Linux only)
 
 - Get nightly builds (has latest fixes and improvements) from
-  - [get.doukutsu.rs](https://get.doukutsu.rs)
-  - [nightly.link](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master?preview)
+  - [nightly.link](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main?preview)
 
   Permalinks to latest builds from `master` branch:
 
-  - [Windows (64-bit)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_windows-x64.zip)
-  - [Windows (32-bit)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_windows-x32.zip)
-  - [macOS (Intel, 64-bit, 10.14+)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_mac-x64.zip)
-  - [macOS (Apple M1, 11.0+)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_mac-arm64.zip)
-  - [Linux (64-bit)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_linux-x64.zip)
-  - [Android (armv7/arm64/x86)](https://nightly.link/doukutsu-rs/doukutsu-rs/workflows/ci/master/doukutsu-rs_android.zip)
+  - [Windows (64-bit)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_windows-x64.zip)
+  - [Windows (32-bit)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_windows-x32.zip)
+  - [macOS (Intel, 64-bit, 10.14+)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_mac-x64.zip)
+  - [macOS (Apple M1, 11.0+)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_mac-arm64.zip)
+  - [Linux (64-bit)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_linux-x64.zip)
+  - [Android (armv7/arm64/x86)](https://nightly.link/MrRagtime/miserysmeditation/workflows/ci/main/miserysmeditation_android.zip)
 
 > [!NOTE]
-> macOS note: If you get a `"doukutsu-rs" can't be opened` message, right-click doukutsu-rs.app and click open.
+> macOS note: If you get a `"miserysmeditation" can't be opened` message, right-click doukutsu-rs.app and click open.
 
 > [!NOTE]
 > If you get issues with Epic Games Store version, scroll down for instructions.
 
 #### Data files
 
-In order to work doukutsu-rs needs to be paired with supported data files. This repository does not contain any data
+In order to work miserysmeditation needs to be paired with supported data files. This repository does not contain any data
 files.
 
-doukutsu-rs works fine with freeware data files or [NXEngine(-evo)](https://github.com/nxengine/nxengine-evo) or from a
+miserysmeditation works fine with freeware data files or [NXEngine(-evo)](https://github.com/nxengine/nxengine-evo) or from a
 supported copy of [Cave Story+](https://www.nicalis.com/games/cavestory+).
 
 <details>
@@ -47,7 +45,7 @@ supported copy of [Cave Story+](https://www.nicalis.com/games/cavestory+).
 
   1. Launch this app.
   2. Press **☰** on the top left corner.
-  3. Tap on **"doukutsu-rs game data"**.
+  3. Tap on **"miserysmeditation game data"**.
   4. Copy your game data files to the opened folder.
 
 
@@ -58,7 +56,7 @@ supported copy of [Cave Story+](https://www.nicalis.com/games/cavestory+).
   3. Press **"+ Add storage"**.
   4. In the window that pops up, press **"External storage"**.
   5. Press **☰** on the top left corner.
-  6. Tap on **"doukutsu-rs game data"**.
+  6. Tap on **"miserysmeditation game data"**.
   7. Press the large blue button at the bottom labelled **"USE THIS FOLDER"**.
   8. Then click on **☰** in the top left corner again and open.
   9. Tap on **"files"** above **"+ Add storage"**.
@@ -69,20 +67,20 @@ supported copy of [Cave Story+](https://www.nicalis.com/games/cavestory+).
 
 **Freeware**
 
-doukutsu-rs works out of the box when it's placed in the same directory as the original Doukutsu.exe executable. On the initial
-startup, doukutsu-rs will automatically extract the additional resources that are embedded in the vanilla game into the `data`
-directory. Until that is done, both doukutsu-rs and the vanilla executable have to exist in the directory.
+miserysmeditation works out of the box when it's placed in the same directory as the original Doukutsu.exe executable. On the initial
+startup, miserysmeditation will automatically extract the additional resources that are embedded in the vanilla game into the `data`
+directory. Until that is done, both miserysmeditation and the vanilla executable have to exist in the directory.
 
 <details>
 <summary>Example root directory</summary>
 
-![example root directory with doukutsu-rs and vanilla Cave Story](https://i.imgur.com/3dJ7WMB.png)
+![example root directory with miserysmeditation and vanilla Cave Story](https://i.imgur.com/3dJ7WMB.png)
 
 </details>
 
 **Cave Story+**
 
-doukutsu-rs can be used as drop-in replacement for `CaveStory+.exe` (instructions for Mac are in the "Steam release (Win/Mac/Linux)" section). No modifications to game files are needed.
+miserysmeditation can be used as drop-in replacement for `CaveStory+.exe` (instructions for Mac are in the "Steam release (Win/Mac/Linux)" section). No modifications to game files are needed.
 
 **Remastered version (first released in 2017 on Switch)**
 
@@ -94,7 +92,7 @@ doukutsu-rs can be used as drop-in replacement for `CaveStory+.exe` (instruction
 <details>
 <summary>Steam (2026) - not yet supported</summary>
 
-See https://github.com/doukutsu-rs/doukutsu-rs/issues/365 for status.
+See https://github.com/MrRagtime/miserysmeditation/issues/365 for status.
 </details>
 
 <details>
@@ -124,17 +122,17 @@ you run it in setup described above.
 
 The `data` folder is in the same place across all platforms.
 
-If you want to use doukutsu-rs as a substitute for Mac version of Cave Story+ (which at moment of writing doesn't work
+If you want to use miserysmeditation as a substitute for Mac version of Cave Story+ (which at moment of writing doesn't work
 on 10.15+ anymore), do the following:
 
-1. Find the doukutsu-rs executable:
-   - In stables, nightly, and CI builds, it's in `doukutsu-rs.app/Contents/MacOS/doukutsu-rs`
-   - In your own builds, it's in `target/(release|debug)/doukutsu-rs`
+1. Find the miserysmeditation executable:
+   - In stables, nightly, and CI builds, it's in `miserysmeditation.app/Contents/MacOS/doukutsu-rs`
+   - In your own builds, it's in `target/(release|debug)/miserysmeditation`
 2. Open Steam Library, select `Cave Story+`, press the `Manage` button (gear icon) and select `Properties...`
 3. Select `Local Files` and press `Browse...`.
 4. Open the `Cave Story+.app` bundle and navigate to `Contents/MacOS` directory.
 5. Rename the `Cave Story+` executable to something else or delete it.
-6. Copy the doukutsu-rs executable and rename it to `Cave Story+`.
+6. Copy the miserysmeditation executable and rename it to `Cave Story+`.
 7. Launch the game from Steam and enjoy!
 
 ![image](https://user-images.githubusercontent.com/53099651/155904982-eb6032d8-7a4d-4af7-ae6f-b69041ecfaa4.png)
@@ -146,7 +144,7 @@ on 10.15+ anymore), do the following:
 > 
 > Nicalis for some reason ships a stray `opengl32.dll` DLL from Windows 7 with the Epic Games Store copies of Cave Story+.
 > 
-> However as the game is 32-bit and the dll is 64-bit it has no effect on the original version, but as it's a core Windows DLL and doukutsu-rs ships 64-bit builds and uses OpenGL, it's makes the game crash on startup.
+> However as the game is 32-bit and the dll is 64-bit it has no effect on the original version, but as it's a core Windows DLL and miserysmeditation ships 64-bit builds and uses OpenGL, it's makes the game crash on startup.
 > 
 > The fix is to simply delete `opengl32.dll`, as it's not used anyway.
 
@@ -190,7 +188,7 @@ The archive from Humble Bundle contains the necessary `data` folder, in the same
 
 Same controls as the default for freeware and Cave Story+ keyboard.
 
-To change, use the control customization menu or edit `doukutsu-rs\data\settings.json` within your user directory.
+To change, use the control customization menu or edit `miserysmeditation\data\settings.json` within your user directory.
 
 |                           | P1        | P2        |
 | ------------------------- | --------- | --------- |
@@ -234,9 +232,9 @@ To change, use the control customization menu or edit `doukutsu-rs\data\settings
 
 ![Balcony Switch](https://user-images.githubusercontent.com/53099651/155918810-063c0f06-2d48-485f-8367-6337525deab7.png)
 
-![Dogs Switch](https://github.com/doukutsu-rs/doukutsu-rs/assets/6276139/30ba01ae-375d-4488-98c4-98e3e8c7f187)
+![Dogs Switch](https://github.com/MrRagtime/miserysmeditation/assets/6276139/30ba01ae-375d-4488-98c4-98e3e8c7f187)
 
-![Almond Switch](https://github.com/doukutsu-rs/doukutsu-rs/assets/6276139/42d4b6a3-4fc5-4aaf-9535-462c4c484dc7)
+![Almond Switch](https://github.com/MrRagtime/miserysmeditation/assets/6276139/42d4b6a3-4fc5-4aaf-9535-462c4c484dc7)
 
 ![Hell Switch](https://user-images.githubusercontent.com/53099651/155918602-62268274-c529-41c2-a87e-0c31e7874b94.png)
 
@@ -245,7 +243,8 @@ To change, use the control customization menu or edit `doukutsu-rs\data\settings
 #### Credits
 
 - Studio Pixel/Nicalis for Cave Story
-- [AppleHair](https://github.com/AppleHair) - icon redesign for all platforms(`crabsue-icon`).
+- [doukutsu-rs](https://github.com/doukutsu-rs/doukutsu-rs) - open-source remake of Cave Story's engine written in Rust
+- [AppleHair](https://github.com/AppleHair) - icon redesign for all platforms(`miserysmeditation-icon`).
 - [@Daedily](https://twitter.com/Daedliy) - brand artwork (Icon / Banner / Server), screenshots for this guide.
 - [ggez](https://github.com/ggez/ggez) - parts of it are used in `crate::framework`, notably the VFS code.
 - [Clownacy](https://github.com/Clownacy) - widescreen camera code.

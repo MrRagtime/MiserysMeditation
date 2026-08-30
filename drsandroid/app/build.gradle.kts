@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.doukutsu_rs"
+    namespace = "io.github.mrragtime.miserysmeditation"
 
     /**
      * NOTE: If you want to change the versions of packages required for the build
@@ -15,7 +15,7 @@ android {
     ndkVersion = "28.0.13004108"
 
     defaultConfig {
-        applicationId = "io.github.doukutsu_rs"
+        applicationId = "io.github.mrragtime.miserysmeditation"
         minSdk = 24
         targetSdk = 35
         versionCode = 3
@@ -37,7 +37,7 @@ android {
         manifestPlaceholders["documentsAuthority"] = documentsAuthorityValue
         buildConfigField("String", "DOCUMENTS_AUTHORITY", "\"$documentsAuthorityValue\"")
 
-        resValue("string", "app_name", "doukutsu-rs")
+        resValue("string", "app_name", "miserysmeditation")
     }
 
     buildTypes {
@@ -61,7 +61,7 @@ android {
         }
         debug {
             applicationIdSuffix = ".debug"
-            resValue("string", "app_name", "doukutsu-rs (debug)")
+            resValue("string", "app_name", "miserysmeditation (debug)")
 
             isJniDebuggable = true
             ndk {

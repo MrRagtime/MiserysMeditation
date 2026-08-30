@@ -46,7 +46,7 @@ impl Scene for LoadingScene {
     fn draw(&self, state: &mut SharedGameState, ctx: &mut Context) -> GameResult {
         graphics::set_vsync_mode(ctx, state.settings.vsync_mode)?;
 
-        match state.texture_set.get_or_load_batch(ctx, &state.constants, "Loading") {
+        match state.texture_set.get_or_load_batch(ctx, &state.constants, "MiserysMeditation/Loading") {
             Ok(batch) => {
                 batch.add(
                     ((state.canvas_size.0 - batch.width() as f32) / 2.0).floor(),
