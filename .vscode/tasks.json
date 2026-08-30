@@ -2,16 +2,27 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run",
+            "label": "Win32: Build and Run",
             "type": "shell",
-            "command": "powershell",
+            "command": "cmd",
             "args": [
-                "-NoLogo",
-                "-NoProfile",
-                "-ExecutionPolicy",
-                "Bypass",
-                "-Command",
-                "cargo run; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; if (Test-Path ./target/debug/data) { Remove-Item -Recurse -Force ./target/debug/data }; New-Item -ItemType Directory -Force -Path ./target/debug/data | Out-Null; Copy-Item -Recurse -Force ./data-overlay/* ./target/debug/data/"
+                "/c",
+                "build-and-run.bat"
+            ],
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Linux/macOS: Build and Run",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "build-and-run.sh"
             ],
             "problemMatcher": [
                 "$rustc"
