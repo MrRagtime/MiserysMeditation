@@ -464,7 +464,6 @@ jobs:
       - name: Process Android build
         if: ${{ needs.build_android.result == 'success' }}
         run: |
-          cp ./temp-android/miserysmeditation.apk "./release-binaries/miserysmeditation_android_${{ steps.set_version.outputs.version }}.universal.apk"
           cp ./temp-android/miserysmeditation_android.zip "./release-binaries/miserysmeditation_android_${{ steps.set_version.outputs.version }}.zip"
 
       # Horizon build
@@ -478,15 +477,26 @@ jobs:
       - name: Process Horizon build
         if: ${{ needs.build_horizon.result == 'success' }}
         run: |
-          cp ./temp-horizon/miserysmeditation.nro "./release-binaries/miserysmeditation_switch_${{ steps.set_version.outputs.version }}.arm64.nro"
-          cp ./temp-horizon/miserysmeditation_horizon.zip "./release-binaries/miserysmeditation_switch_${{ steps.set_version.outputs.version }}.arm64.zip"
+          cp ./temp-horizon/miserysmeditation_horizon.zip "./release-binaries/miserysmeditation_switch_${{ steps.set_version.outputs.version }}.zip"
+
+      - name: Ensure GitHub release exists
+        if: ${{ github.ref_name == 'main' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh release view "${{ env.VERSION }}" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            gh release create "${{ env.VERSION }}" \
+              --repo "${{ github.repository }}" \
+              --title "${{ env.VERSION }}" \
+              --target "${{ github.sha }}" \
+              --generate-notes
+          fi
 
       - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
         if: ${{ github.ref_name == 'main' }}
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: release-binaries/*
-          tag: ${{ env.VERSION }}
-          overwrite: true
-          file_glob: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ env.VERSION }}" ./release-binaries/* \
+            --repo "${{ github.repository }}" \
+            --clobber
